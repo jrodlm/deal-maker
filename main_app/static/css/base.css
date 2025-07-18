@@ -35,7 +35,7 @@ body {
   --nav-bg: rgba(13, 27, 42, 0.8);
   --nav-bg-ff: rgba(13, 27, 42, 1);
   --borders: rgb(13, 27, 42, 1) solid 2px;
-  --text-color: rgb(17, 20, 17);
+  --text-color: rgb(255, 255, 255);
   --link-hover-color: rgb(16, 56, 158);
   --button-bg: rgb(245, 245, 245);
   --button-bg-hover: rgb(226, 226, 226);

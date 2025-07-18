@@ -1,0 +1,50 @@
+{% extends 'base.html' %} {% load static %} {% block head %}
+<link
+  rel="stylesheet"
+  href="{% static 'css/deals/deal-index.css' %}"
+/>
+{% endblock %} {% block content %}
+
+<section class="page-header">
+  <h1>Deal List</h1>
+  <img
+    src="{% static 'images/business-building-svgrepo-com.svg' %}"
+    alt="Acme corp"
+  />
+  <img
+    src="{% static 'images/business-finance-money-svgrepo-com.svg' %}"
+    alt="SaaS growth"
+  />
+  <img
+    src="{% static 'images/eco-friendly-building.svg' %}"
+    alt="Industrial"
+  />
+  <img
+    src="{% static 'images/business-service-svgrepo-com.svg' %}"
+    alt="Plumbing"
+  />
+</section>
+
+<section class="card-container">
+  {% for deal in deals %}
+  <div class="card">
+    <div class="card-content">
+      <div class="card-img-container">
+        <img
+          src="{% static 'images/brown-briefcase.svg' %}"
+          alt="A briefcase"
+        />
+      </div>
+      <h2 class="card-title">{{ deal.company_name }}</h2>
+      {% if deal.sde > 0 %}
+      <p>A {{ deal.sde }} thousand {{ deal.industry }}</p>
+      {% else %}
+      <p>A {{ deal.industry }} business.</p>
+      {% endif %}
+      <p><small>{{ deal.notes }}</small></p>
+    </div>
+  </div>
+  {% endfor %}
+</section>
+
+{% endblock %}
