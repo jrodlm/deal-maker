@@ -10,10 +10,9 @@
   margin: 10px;
   border: var(--borders);
   box-shadow: var(--card-box-shadow);
-  background-color: #ffffff; /* ✅ fixes the "white-on-white" issue */
-  color: var(--text-color);  /* ✅ ensures readable text */
+  color: var(--text-color);  
   border-radius: var(--card-border-radius);
-  overflow: hidden; /* ✅ helps trim any overflow issues */
+  overflow: hidden; 
 }
 
 .card-content {

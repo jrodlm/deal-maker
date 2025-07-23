@@ -20,8 +20,9 @@
       </div>
       <nav>
         <ul>
-          <li><a href="/deals">All Deals</a></li>
-          <li><a href="/about">About</a></li>
+      <li><a href="{% url 'deal-index' %}">All Deals</a></li>
+      <li><a href="{% url 'deal-create' %}">Add a Deal</a></li>
+      <li><a href="{% url 'about' %}">About</a></li>
         </ul>
       </nav>
     </header>
