@@ -9,23 +9,29 @@
   <div class="card">
     <div class="card-content">
       <div class="card-img-container">
-        <img
-          src="{% static 'images/brown-briefcase.svg' %}"
-          alt="A briefcase"
-        />
+        <img src="{% static 'images/brown-briefcase.svg' %}"
+          alt="A briefcase"/>
       </div>
       <h2 class="card-title">{{ deal.company_name }}</h2>
-     {% if deal.sde > 0 %}
-     <p>A ${{ deal.sde|floatformat:0|intcomma }} {{ deal.industry }} business</p>
-     {% else %}
-     <p>A {{ deal.industry }} business</p>
-     {% endif %}
-      <p><small>{{ deal.notes }}</small></p>
-    </div>
-      <div class="cat-actions">
-    <a href="{% url 'deal-update' deal.id %}" class="btn warn">Edit</a>
-    <a href="{% url 'deal-delete' deal.id %}" class="btn danger">Delete</a>
+      <p><strong>Reported SDE:</strong> ${{ deal.sde|floatformat:0|intcomma }} </p>
+      <br>
+      <p><strong>Industry:</strong> {{ deal.industry }} </p>  
+      <br>    
+      <p><strong>Asking Price:</strong> ${{ deal.asking_price|floatformat:0|intcomma  }} </p>
+      <br>
+      <p><strong>Current Revenue:</strong> ${{ deal.revenue|floatformat:0|intcomma }} </p>
+      <br>
+      <p><strong>Notes:</strong> {{ deal.notes }} </p>
+      <br>
+      <p><strong>Status:</strong> {{ deal.get_status_display }} </p>
+      <br>
+      <p><strong>Deal Added:</strong> {{ deal.created_on }} </p>
+    
+      <div class="deal-actions">
+      <a href="{% url 'deal-update' deal.id %}" class="btn warn">Edit</a>
+      <a href="{% url 'deal-delete' deal.id %}" class="btn danger">Delete</a>
   </div>
-  </div>
+ </div>
+</div>
 </section>
 {% endblock %}

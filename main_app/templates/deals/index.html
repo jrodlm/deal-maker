@@ -1,4 +1,8 @@
-{% extends 'base.html' %} {% load static %} {% block head %}
+{% extends 'base.html' %} 
+{% load static %} 
+{% load humanize %}
+
+{% block head %}
 <link
   rel="stylesheet"
   href="{% static 'css/deals/deal-index.css' %}"
@@ -37,12 +41,8 @@
         />
       </div>
       <h2 class="card-title">{{ deal.company_name }}</h2>
-      {% if deal.sde > 0 %}
-      <p>A {{ deal.sde }} thousand {{ deal.industry }}</p>
-      {% else %}
-      <p>A {{ deal.industry }} business.</p>
-      {% endif %}
-      <p><small>{{ deal.notes }}</small></p>
+      <p>Reported SDE: ${{ deal.sde|floatformat:0|intcomma }} </p>
+      <p>Industry: {{ deal.industry }} </p>
     </div>
   </div>
   {% endfor %}
