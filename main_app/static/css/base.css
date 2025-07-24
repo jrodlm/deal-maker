@@ -267,7 +267,7 @@ main {
     max-width: 1920px;
     top: 20px;
     background-color: rgba(248, 245, 244, 1); 
-    border-bottom: none;
+    border-bottom: var(--borders);
     backdrop-filter: blur(4px); 
 
   }

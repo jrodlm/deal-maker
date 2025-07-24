@@ -7,7 +7,8 @@
 {% block content %}
 <section class="card-container">
 <h1>{{ deal.company_name }} Details</h1>
-  <div class="card">
+<div class="details-layout">  
+<div class="card">
     <div class="card-content">
       <div class="card-img-container">
         <img src="{% static 'images/brown-briefcase.svg' %}"
@@ -33,6 +34,34 @@
       <a href="{% url 'deal-delete' deal.id %}" class="btn danger">Delete</a>
   </div>
  </div>
+ 
+</div>
+<div class="key-container">
+    <h3>Key Terms & Why They Matter</h3>
+
+    <div class="key-item">
+      <strong>SDE (Seller’s Discretionary Earnings)</strong><br>
+      <em>What it is:</em> Total owner benefit (profit + salary + perks).<br>
+      <em>Why it matters:</em> Reflects earning potential if you own and operate.
+    </div>
+
+    <div class="key-item">
+      <strong>Industry</strong><br>
+      <em>What it is:</em> The business category.<br>
+      <em>Why it matters:</em> Helps evaluate opportunity and risk.
+    </div>
+
+    <div class="key-item">
+      <strong>Asking Price</strong><br>
+      <em>What it is:</em> The seller’s listed price.<br>
+      <em>Why it matters:</em> Sets the stage for negotiation.
+    </div>
+
+    <div class="key-item">
+      <strong>Current Revenue</strong><br>
+      <em>What it is:</em> The annual business income.<br>
+      <em>Why it matters:</em> Gauges traction and market demand.
+    </div>
 </div>
 </section>
 {% endblock %}
