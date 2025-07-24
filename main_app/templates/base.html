@@ -12,6 +12,8 @@
     {% endblock %}
   </head>
   <body class="{% block body_class %}{% endblock %}">
+    <div class="background-overlay"></div>
+    <div class="overlay-content">
     <header>
       <div class="header-logo-container">
         <a href="/">
@@ -33,6 +35,8 @@
           {% else %}
             <li><a href="{% url 'about' %}">About</a></li>
             <li><a href="{% url 'home' %}">Login</a></li>
+            <li><a href="{% url 'signup' %}">Sign Up</a></li>
+
             {% endif %}
         </ul>
       </nav>
@@ -41,5 +45,6 @@
      {% block content %} 
      {% endblock %}
      </main>
+    </div>
   </body>
 </html>

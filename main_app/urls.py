@@ -9,4 +9,6 @@ urlpatterns = [
     path('deals/create/', views.DealCreate.as_view(), name='deal-create'),
     path('deals/<int:pk>/update/', views.DealUpdate.as_view(), name='deal-update'),
     path('deals/<int:pk>/delete/', views.DealDelete.as_view(), name='deal-delete'),
+    path('accounts/signup/', views.signup, name='signup'),
+
 ]
