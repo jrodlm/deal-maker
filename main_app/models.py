@@ -11,9 +11,6 @@ STATUS = (
     ('P', 'Pass by Seller'),
 )
 
-
-
-# Create your models here.
 class Deal(models.Model):
     company_name = models.CharField(max_length=100)
     industry = models.CharField(max_length=100)
