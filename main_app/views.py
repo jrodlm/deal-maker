@@ -26,7 +26,7 @@ def deal_detail(request, deal_id):
 
 class DealCreate(LoginRequiredMixin, CreateView):
     model = Deal 
-    fields = ['industry', 'asking_price', 'revenue', 'sde', 'status', 'notes']
+    fields = ['company_name','industry', 'asking_price', 'revenue', 'sde', 'status', 'notes']
 
     def form_valid(self, form):
         form.instance.user = self.request.user  
