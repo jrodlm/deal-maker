@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Deal
 from django.contrib.auth.views import LoginView
-from django.views.generic import ListView, DetailView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -27,7 +26,7 @@ def deal_detail(request, deal_id):
 
 class DealCreate(LoginRequiredMixin, CreateView):
     model = Deal 
-    fields = '__all__'
+    fields = ['industry', 'asking_price', 'revenue', 'sde', 'status', 'notes']
 
     def form_valid(self, form):
         form.instance.user = self.request.user  
